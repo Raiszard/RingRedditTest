@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9BDC071D2011660300F825E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC071C2011660300F825E4 /* AppDelegate.swift */; };
+		9BDC071F2011660300F825E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC071E2011660300F825E4 /* ViewController.swift */; };
+		9BDC07222011660300F825E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BDC07202011660300F825E4 /* Main.storyboard */; };
+		9BDC07242011660300F825E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BDC07232011660300F825E4 /* Assets.xcassets */; };
+		9BDC07272011660300F825E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BDC07252011660300F825E4 /* LaunchScreen.storyboard */; };
+		9BDC07322011660300F825E4 /* Ring_Reddit_TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC07312011660300F825E4 /* Ring_Reddit_TestTests.swift */; };
+		9BDC073D2011660300F825E4 /* Ring_Reddit_TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC073C2011660300F825E4 /* Ring_Reddit_TestUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9BDC072E2011660300F825E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9BDC07112011660300F825E4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9BDC07182011660300F825E4;
+			remoteInfo = "Ring Reddit Test";
+		};
+		9BDC07392011660300F825E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9BDC07112011660300F825E4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9BDC07182011660300F825E4;
+			remoteInfo = "Ring Reddit Test";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9BDC07192011660300F825E4 /* Ring Reddit Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ring Reddit Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BDC071C2011660300F825E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9BDC071E2011660300F825E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9BDC07212011660300F825E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9BDC07232011660300F825E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9BDC07262011660300F825E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9BDC07282011660300F825E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BDC072D2011660300F825E4 /* Ring Reddit TestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ring Reddit TestTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BDC07312011660300F825E4 /* Ring_Reddit_TestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ring_Reddit_TestTests.swift; sourceTree = "<group>"; };
+		9BDC07332011660300F825E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BDC07382011660300F825E4 /* Ring Reddit TestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ring Reddit TestUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BDC073C2011660300F825E4 /* Ring_Reddit_TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ring_Reddit_TestUITests.swift; sourceTree = "<group>"; };
+		9BDC073E2011660300F825E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9BDC07162011660300F825E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BDC072A2011660300F825E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BDC07352011660300F825E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9BDC07102011660300F825E4 = {
+			isa = PBXGroup;
+			children = (
+				9BDC071B2011660300F825E4 /* Ring Reddit Test */,
+				9BDC07302011660300F825E4 /* Ring Reddit TestTests */,
+				9BDC073B2011660300F825E4 /* Ring Reddit TestUITests */,
+				9BDC071A2011660300F825E4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9BDC071A2011660300F825E4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9BDC07192011660300F825E4 /* Ring Reddit Test.app */,
+				9BDC072D2011660300F825E4 /* Ring Reddit TestTests.xctest */,
+				9BDC07382011660300F825E4 /* Ring Reddit TestUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9BDC071B2011660300F825E4 /* Ring Reddit Test */ = {
+			isa = PBXGroup;
+			children = (
+				9BDC071C2011660300F825E4 /* AppDelegate.swift */,
+				9BDC071E2011660300F825E4 /* ViewController.swift */,
+				9BDC07202011660300F825E4 /* Main.storyboard */,
+				9BDC07232011660300F825E4 /* Assets.xcassets */,
+				9BDC07252011660300F825E4 /* LaunchScreen.storyboard */,
+				9BDC07282011660300F825E4 /* Info.plist */,
+			);
+			path = "Ring Reddit Test";
+			sourceTree = "<group>";
+		};
+		9BDC07302011660300F825E4 /* Ring Reddit TestTests */ = {
+			isa = PBXGroup;
+			children = (
+				9BDC07312011660300F825E4 /* Ring_Reddit_TestTests.swift */,
+				9BDC07332011660300F825E4 /* Info.plist */,
+			);
+			path = "Ring Reddit TestTests";
+			sourceTree = "<group>";
+		};
+		9BDC073B2011660300F825E4 /* Ring Reddit TestUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9BDC073C2011660300F825E4 /* Ring_Reddit_TestUITests.swift */,
+				9BDC073E2011660300F825E4 /* Info.plist */,
+			);
+			path = "Ring Reddit TestUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9BDC07182011660300F825E4 /* Ring Reddit Test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BDC07412011660300F825E4 /* Build configuration list for PBXNativeTarget "Ring Reddit Test" */;
+			buildPhases = (
+				9BDC07152011660300F825E4 /* Sources */,
+				9BDC07162011660300F825E4 /* Frameworks */,
+				9BDC07172011660300F825E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Ring Reddit Test";
+			productName = "Ring Reddit Test";
+			productReference = 9BDC07192011660300F825E4 /* Ring Reddit Test.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9BDC072C2011660300F825E4 /* Ring Reddit TestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BDC07442011660300F825E4 /* Build configuration list for PBXNativeTarget "Ring Reddit TestTests" */;
+			buildPhases = (
+				9BDC07292011660300F825E4 /* Sources */,
+				9BDC072A2011660300F825E4 /* Frameworks */,
+				9BDC072B2011660300F825E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9BDC072F2011660300F825E4 /* PBXTargetDependency */,
+			);
+			name = "Ring Reddit TestTests";
+			productName = "Ring Reddit TestTests";
+			productReference = 9BDC072D2011660300F825E4 /* Ring Reddit TestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9BDC07372011660300F825E4 /* Ring Reddit TestUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BDC07472011660300F825E4 /* Build configuration list for PBXNativeTarget "Ring Reddit TestUITests" */;
+			buildPhases = (
+				9BDC07342011660300F825E4 /* Sources */,
+				9BDC07352011660300F825E4 /* Frameworks */,
+				9BDC07362011660300F825E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9BDC073A2011660300F825E4 /* PBXTargetDependency */,
+			);
+			name = "Ring Reddit TestUITests";
+			productName = "Ring Reddit TestUITests";
+			productReference = 9BDC07382011660300F825E4 /* Ring Reddit TestUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9BDC07112011660300F825E4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Ring Reddit Test";
+				TargetAttributes = {
+					9BDC07182011660300F825E4 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					9BDC072C2011660300F825E4 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9BDC07182011660300F825E4;
+					};
+					9BDC07372011660300F825E4 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9BDC07182011660300F825E4;
+					};
+				};
+			};
+			buildConfigurationList = 9BDC07142011660300F825E4 /* Build configuration list for PBXProject "Ring Reddit Test" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9BDC07102011660300F825E4;
+			productRefGroup = 9BDC071A2011660300F825E4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9BDC07182011660300F825E4 /* Ring Reddit Test */,
+				9BDC072C2011660300F825E4 /* Ring Reddit TestTests */,
+				9BDC07372011660300F825E4 /* Ring Reddit TestUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9BDC07172011660300F825E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BDC07272011660300F825E4 /* LaunchScreen.storyboard in Resources */,
+				9BDC07242011660300F825E4 /* Assets.xcassets in Resources */,
+				9BDC07222011660300F825E4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BDC072B2011660300F825E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BDC07362011660300F825E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9BDC07152011660300F825E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BDC071F2011660300F825E4 /* ViewController.swift in Sources */,
+				9BDC071D2011660300F825E4 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BDC07292011660300F825E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BDC07322011660300F825E4 /* Ring_Reddit_TestTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BDC07342011660300F825E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BDC073D2011660300F825E4 /* Ring_Reddit_TestUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9BDC072F2011660300F825E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9BDC07182011660300F825E4 /* Ring Reddit Test */;
+			targetProxy = 9BDC072E2011660300F825E4 /* PBXContainerItemProxy */;
+		};
+		9BDC073A2011660300F825E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9BDC07182011660300F825E4 /* Ring Reddit Test */;
+			targetProxy = 9BDC07392011660300F825E4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9BDC07202011660300F825E4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9BDC07212011660300F825E4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9BDC07252011660300F825E4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9BDC07262011660300F825E4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9BDC073F2011660300F825E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9BDC07402011660300F825E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9BDC07422011660300F825E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6AUN9FGGRZ;
+				INFOPLIST_FILE = "Ring Reddit Test/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "RRT.Ring-Reddit-Test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9BDC07432011660300F825E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6AUN9FGGRZ;
+				INFOPLIST_FILE = "Ring Reddit Test/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "RRT.Ring-Reddit-Test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9BDC07452011660300F825E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6AUN9FGGRZ;
+				INFOPLIST_FILE = "Ring Reddit TestTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "RRT.Ring-Reddit-TestTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ring Reddit Test.app/Ring Reddit Test";
+			};
+			name = Debug;
+		};
+		9BDC07462011660300F825E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6AUN9FGGRZ;
+				INFOPLIST_FILE = "Ring Reddit TestTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "RRT.Ring-Reddit-TestTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ring Reddit Test.app/Ring Reddit Test";
+			};
+			name = Release;
+		};
+		9BDC07482011660300F825E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6AUN9FGGRZ;
+				INFOPLIST_FILE = "Ring Reddit TestUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "RRT.Ring-Reddit-TestUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Ring Reddit Test";
+			};
+			name = Debug;
+		};
+		9BDC07492011660300F825E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6AUN9FGGRZ;
+				INFOPLIST_FILE = "Ring Reddit TestUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "RRT.Ring-Reddit-TestUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Ring Reddit Test";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9BDC07142011660300F825E4 /* Build configuration list for PBXProject "Ring Reddit Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BDC073F2011660300F825E4 /* Debug */,
+				9BDC07402011660300F825E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BDC07412011660300F825E4 /* Build configuration list for PBXNativeTarget "Ring Reddit Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BDC07422011660300F825E4 /* Debug */,
+				9BDC07432011660300F825E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BDC07442011660300F825E4 /* Build configuration list for PBXNativeTarget "Ring Reddit TestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BDC07452011660300F825E4 /* Debug */,
+				9BDC07462011660300F825E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BDC07472011660300F825E4 /* Build configuration list for PBXNativeTarget "Ring Reddit TestUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BDC07482011660300F825E4 /* Debug */,
+				9BDC07492011660300F825E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9BDC07112011660300F825E4 /* Project object */;
+}
