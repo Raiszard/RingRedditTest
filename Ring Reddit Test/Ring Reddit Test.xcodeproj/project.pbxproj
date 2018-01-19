@@ -14,6 +14,8 @@
 		9BDC07272011660300F825E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BDC07252011660300F825E4 /* LaunchScreen.storyboard */; };
 		9BDC07322011660300F825E4 /* Ring_Reddit_TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC07312011660300F825E4 /* Ring_Reddit_TestTests.swift */; };
 		9BDC073D2011660300F825E4 /* Ring_Reddit_TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC073C2011660300F825E4 /* Ring_Reddit_TestUITests.swift */; };
+		9BDC074C2011689C00F825E4 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC074A2011689C00F825E4 /* PostTableViewCell.swift */; };
+		9BDC074D2011689C00F825E4 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BDC074B2011689C00F825E4 /* PostTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		9BDC07382011660300F825E4 /* Ring Reddit TestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ring Reddit TestUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BDC073C2011660300F825E4 /* Ring_Reddit_TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ring_Reddit_TestUITests.swift; sourceTree = "<group>"; };
 		9BDC073E2011660300F825E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BDC074A2011689C00F825E4 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		9BDC074B2011689C00F825E4 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,8 @@
 				9BDC071C2011660300F825E4 /* AppDelegate.swift */,
 				9BDC071E2011660300F825E4 /* ViewController.swift */,
 				9BDC07202011660300F825E4 /* Main.storyboard */,
+				9BDC074A2011689C00F825E4 /* PostTableViewCell.swift */,
+				9BDC074B2011689C00F825E4 /* PostTableViewCell.xib */,
 				9BDC07232011660300F825E4 /* Assets.xcassets */,
 				9BDC07252011660300F825E4 /* LaunchScreen.storyboard */,
 				9BDC07282011660300F825E4 /* Info.plist */,
@@ -235,6 +241,7 @@
 				9BDC07272011660300F825E4 /* LaunchScreen.storyboard in Resources */,
 				9BDC07242011660300F825E4 /* Assets.xcassets in Resources */,
 				9BDC07222011660300F825E4 /* Main.storyboard in Resources */,
+				9BDC074D2011689C00F825E4 /* PostTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +268,7 @@
 			files = (
 				9BDC071F2011660300F825E4 /* ViewController.swift in Sources */,
 				9BDC071D2011660300F825E4 /* AppDelegate.swift in Sources */,
+				9BDC074C2011689C00F825E4 /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
