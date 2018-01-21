@@ -35,6 +35,17 @@ class ViewController: UIViewController {
             testTitles.append(randomlyLongText)
         }
 
+        //test call for API
+        let api = API()
+        
+        api.retrieveData(url: "https://api.reddit.com/top") { (jsonResponse, error) in
+            if error == nil {
+                //parse json
+                print(jsonResponse)
+            } else {
+                print(error?.localizedDescription)
+            }
+        }
     
     }
 
@@ -44,6 +55,7 @@ class ViewController: UIViewController {
     }
 
 
+    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
