@@ -50,6 +50,9 @@
                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qr3-Bw-ORU">
+                        <rect key="frame" x="8" y="8" width="100" height="100"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="tF9-Do-dKe" firstAttribute="top" secondItem="Jnd-eg-kgy" secondAttribute="bottom" constant="8" id="0rg-ca-4of"/>
@@ -59,8 +62,10 @@
                     <constraint firstItem="tF9-Do-dKe" firstAttribute="width" secondItem="XJh-3S-Ggx" secondAttribute="width" id="DT3-HP-6Zf"/>
                     <constraint firstAttribute="trailing" secondItem="Jnd-eg-kgy" secondAttribute="trailing" constant="8" id="IEk-9a-Rp6"/>
                     <constraint firstItem="Jnd-eg-kgy" firstAttribute="leading" secondItem="aYK-cu-AUw" secondAttribute="trailing" constant="8" id="KT0-f9-gWp"/>
+                    <constraint firstItem="qr3-Bw-ORU" firstAttribute="top" secondItem="aYK-cu-AUw" secondAttribute="top" id="MEz-aZ-gZi"/>
                     <constraint firstAttribute="trailing" secondItem="XJh-3S-Ggx" secondAttribute="trailing" constant="8" id="N3x-bk-8TL"/>
                     <constraint firstItem="Jnd-eg-kgy" firstAttribute="top" secondItem="Gwk-zJ-vtd" secondAttribute="bottom" constant="8" id="St4-b8-Z93"/>
+                    <constraint firstItem="qr3-Bw-ORU" firstAttribute="bottom" secondItem="aYK-cu-AUw" secondAttribute="bottom" id="Vpt-dk-c5m"/>
                     <constraint firstItem="Jnd-eg-kgy" firstAttribute="top" secondItem="Gwk-zJ-vtd" secondAttribute="bottom" constant="8" id="d1t-XL-kUq"/>
                     <constraint firstItem="Gwk-zJ-vtd" firstAttribute="leading" secondItem="aYK-cu-AUw" secondAttribute="trailing" constant="8" id="edh-Gw-MAX"/>
                     <constraint firstItem="Gwk-zJ-vtd" firstAttribute="width" secondItem="XJh-3S-Ggx" secondAttribute="width" id="hi4-eB-Vqu"/>
@@ -69,9 +74,11 @@
                     <constraint firstItem="aYK-cu-AUw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="jkC-YY-6Ff"/>
                     <constraint firstItem="Jnd-eg-kgy" firstAttribute="width" secondItem="XJh-3S-Ggx" secondAttribute="width" id="mbC-kc-qyD"/>
                     <constraint firstAttribute="trailing" secondItem="tF9-Do-dKe" secondAttribute="trailing" constant="8" id="sMc-9B-UZc"/>
+                    <constraint firstItem="qr3-Bw-ORU" firstAttribute="trailing" secondItem="aYK-cu-AUw" secondAttribute="trailing" id="tfn-eF-VYd"/>
                     <constraint firstItem="aYK-cu-AUw" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="uCk-f7-7rr"/>
                     <constraint firstAttribute="trailing" secondItem="Gwk-zJ-vtd" secondAttribute="trailing" constant="8" id="vhS-wT-U8H"/>
                     <constraint firstItem="XJh-3S-Ggx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="xJ2-2s-1HW"/>
+                    <constraint firstItem="qr3-Bw-ORU" firstAttribute="leading" secondItem="aYK-cu-AUw" secondAttribute="leading" id="xsE-sj-WAg"/>
                     <constraint firstItem="Gwk-zJ-vtd" firstAttribute="top" secondItem="XJh-3S-Ggx" secondAttribute="bottom" constant="8" id="ySe-gf-czh"/>
                 </constraints>
             </tableViewCellContentView>

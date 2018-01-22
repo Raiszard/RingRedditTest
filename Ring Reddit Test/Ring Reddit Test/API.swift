@@ -12,7 +12,7 @@ class API: NSObject {
     
     var lastItem = ""
     let limit = 50
-    let itemsPerPage = 2
+    let itemsPerPage = 20
     
     func createRequest(baseURL: String) -> URLRequest? {
         
@@ -40,6 +40,8 @@ class API: NSObject {
             return
         }
         
+        print("*** Request:\(request.url?.absoluteString)")
+        
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
             if (error != nil) {
@@ -47,7 +49,7 @@ class API: NSObject {
                 callback(nil, error)
             } else {
                 let httpResponse = response as? HTTPURLResponse
-                print(httpResponse!)
+//                print(httpResponse!)
                 
                 guard let responseData = data else {
                     print("no response data")
