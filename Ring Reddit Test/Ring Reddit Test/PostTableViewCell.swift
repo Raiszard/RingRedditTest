@@ -14,6 +14,7 @@ protocol PostCellDelegate{
 }
 class PostTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var imageWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
@@ -25,10 +26,17 @@ class PostTableViewCell: UITableViewCell {
             titleLabel.text = topItem.title
             authorLabel.text = topItem.author
             timeLabel.text = topItem.created.stringFromDate()
-            commentsLabel.text = "Comments: \(topItem.numberOfComments)"
             
+            commentsLabel.text = "Comments: \(topItem.numberOfComments!)"
+            
+            if topItem.thumbnailURL == nil || topItem.thumbnailURL?.absoluteString == "self" {
+                imageWidthConstraint.constant = 0
+            } else {
+                imageWidthConstraint.constant = 100
+                
             }
-        
+            
+        }
     }
     
     var delegate: PostCellDelegate?

@@ -14,11 +14,11 @@ class TopItem: NSObject {
     var title: String!
     var author: String!
     var created: Date!
-    var thumbnailURL: String?
+    var thumbnailURL: URL?
     var numberOfComments: Int!
     var link: String?
     
-    var imageSource: String?
+    var imageSource: URL?
     
     func setupTopItem(json: JsonDict) {
         print(json)
@@ -41,13 +41,17 @@ class TopItem: NSObject {
             if let images = preview["images"] as? [JsonDict] {
                 let source = images[0]
                 if let sourceObj = source["source"] as? JsonDict {
-                    imageSource = sourceObj["url"] as? String
+                    if let imageStr = sourceObj["url"] as? String {
+                        imageSource = URL(string: imageStr)
+                    }
                 }
             }
         }
 
-        thumbnailURL = json["thumbnail"] as? String
-
+        if let thumbnailStr = json["thumbnail"] as? String {
+            thumbnailURL = URL(string: thumbnailStr)
+        }
+        
         numberOfComments = json["num_comments"] as! Int
 
         link = json["url"] as? String

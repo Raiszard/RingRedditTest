@@ -64,19 +64,19 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsW-dI-JVd">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="609"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LOF-9B-Sto">
-                                        <rect key="frame" x="87" y="254" width="200" height="100"/>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LOF-9B-Sto">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="609"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="CnS-9L-e29"/>
+                                            <constraint firstAttribute="height" constant="609" id="CnS-9L-e29"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="LOF-9B-Sto" firstAttribute="centerX" secondItem="fsW-dI-JVd" secondAttribute="centerX" id="Acl-4B-HH7"/>
-                                    <constraint firstItem="LOF-9B-Sto" firstAttribute="leading" secondItem="fsW-dI-JVd" secondAttribute="leading" constant="87" id="IAl-4z-COl"/>
+                                    <constraint firstItem="LOF-9B-Sto" firstAttribute="leading" secondItem="fsW-dI-JVd" secondAttribute="leading" id="IAl-4z-COl"/>
                                     <constraint firstItem="LOF-9B-Sto" firstAttribute="centerY" secondItem="fsW-dI-JVd" secondAttribute="centerY" id="Tha-Vl-Qj7"/>
-                                    <constraint firstAttribute="bottom" secondItem="LOF-9B-Sto" secondAttribute="bottom" constant="255" id="VQQ-41-bPS"/>
-                                    <constraint firstAttribute="trailing" secondItem="LOF-9B-Sto" secondAttribute="trailing" constant="88" id="VZc-tN-rym"/>
+                                    <constraint firstAttribute="bottom" secondItem="LOF-9B-Sto" secondAttribute="bottom" id="VQQ-41-bPS"/>
+                                    <constraint firstAttribute="trailing" secondItem="LOF-9B-Sto" secondAttribute="trailing" id="VZc-tN-rym"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="0qJ-uz-UYA" id="XAG-ZU-Dut"/>

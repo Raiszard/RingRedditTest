@@ -10,7 +10,7 @@ import UIKit
 
 class PhotoDetailsViewController: UIViewController {
 
-    var imageStr: String!
+    var imageURL: URL!
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var imageView: UIImageView!
@@ -29,8 +29,7 @@ class PhotoDetailsViewController: UIViewController {
         scrollView.zoomScale = 1.0
 
         imageView.image = UIImage(named: "placeholder")
-        
-        // Do any additional setup after loading the view.
+        imageView.downloadImageFrom(link: imageURL, contentMode: .scaleAspectFit)
     }
 
     override func didReceiveMemoryWarning() {

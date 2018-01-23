@@ -89,6 +89,7 @@
             <connections>
                 <outlet property="authorLabel" destination="Gwk-zJ-vtd" id="zXY-ir-3pv"/>
                 <outlet property="commentsLabel" destination="tF9-Do-dKe" id="Pin-yP-5i3"/>
+                <outlet property="imageWidthConstraint" destination="D2U-zC-e3s" id="dmT-WD-LrB"/>
                 <outlet property="thumbnailImageView" destination="aYK-cu-AUw" id="fi3-aG-W0p"/>
                 <outlet property="timeLabel" destination="Jnd-eg-kgy" id="4kb-ag-OeK"/>
                 <outlet property="titleLabel" destination="XJh-3S-Ggx" id="ChJ-xu-bMJ"/>

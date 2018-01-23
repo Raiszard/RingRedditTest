@@ -122,7 +122,7 @@ extension ViewController: PostCellDelegate {
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let photoVC = storyBoard.instantiateViewController(withIdentifier: "PhotoDetailsViewController") as! PhotoDetailsViewController
-        photoVC.imageStr = fullImageURL
+        photoVC.imageURL = fullImageURL
         self.present(photoVC, animated: true, completion: nil)
         
         
@@ -148,7 +148,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
         cell.thumbnailImageView.image = UIImage(named: "placeholder")
         
-        cell.thumbnailImageView.downloadImageFrom(link: currentItem.thumbnailURL!, contentMode: .scaleAspectFit)
+        if currentItem.thumbnailURL != nil {
+            cell.thumbnailImageView.downloadImageFrom(link: currentItem.thumbnailURL!, contentMode: .scaleAspectFit)
+        }
 
         cell.delegate = self
         return cell
@@ -163,9 +165,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 // MARK: Helpers
 
 extension UIImageView {
-    func downloadImageFrom(link:String, contentMode: UIViewContentMode) {
-        URLSession.shared.dataTask( with: NSURL(string:link)! as URL, completionHandler: {
+    func downloadImageFrom(link:URL, contentMode: UIViewContentMode) {
+
+        URLSession.shared.dataTask(with: link, completionHandler: {
             (data, response, error) -> Void in
+            if error != nil {
+                print(error!.localizedDescription)
+            }
             DispatchQueue.main.async {
                 self.contentMode =  contentMode
                 if let data = data { self.image = UIImage(data: data) }
