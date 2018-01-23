@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9B03293720154FAA00B94A74 /* TopItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B03293620154FAA00B94A74 /* TopItem.swift */; };
+		9B0329392017EA2700B94A74 /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0329382017EA2700B94A74 /* PhotoDetailsViewController.swift */; };
 		9BDC071D2011660300F825E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC071C2011660300F825E4 /* AppDelegate.swift */; };
 		9BDC071F2011660300F825E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC071E2011660300F825E4 /* ViewController.swift */; };
 		9BDC07222011660300F825E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BDC07202011660300F825E4 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		9B03293620154FAA00B94A74 /* TopItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopItem.swift; sourceTree = "<group>"; };
+		9B0329382017EA2700B94A74 /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
 		9BDC07192011660300F825E4 /* Ring Reddit Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ring Reddit Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BDC071C2011660300F825E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BDC071E2011660300F825E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				9BDC07202011660300F825E4 /* Main.storyboard */,
 				9BDC074A2011689C00F825E4 /* PostTableViewCell.swift */,
 				9BDC074B2011689C00F825E4 /* PostTableViewCell.xib */,
+				9B0329382017EA2700B94A74 /* PhotoDetailsViewController.swift */,
 				9BDC074E201184C300F825E4 /* API.swift */,
 				9B03293620154FAA00B94A74 /* TopItem.swift */,
 				9BDC07232011660300F825E4 /* Assets.xcassets */,
@@ -274,6 +277,7 @@
 			files = (
 				9BDC071F2011660300F825E4 /* ViewController.swift in Sources */,
 				9BDC071D2011660300F825E4 /* AppDelegate.swift in Sources */,
+				9B0329392017EA2700B94A74 /* PhotoDetailsViewController.swift in Sources */,
 				9BDC074F201184C300F825E4 /* API.swift in Sources */,
 				9BDC074C2011689C00F825E4 /* PostTableViewCell.swift in Sources */,
 				9B03293720154FAA00B94A74 /* TopItem.swift in Sources */,

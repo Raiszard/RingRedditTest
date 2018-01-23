@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol PostCellDelegate{
+    func tappedThumbnail(sender: PostTableViewCell)
+    
+}
 class PostTableViewCell: UITableViewCell {
 
     @IBOutlet weak var thumbnailImageView: UIImageView!
@@ -16,15 +20,36 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var commentsLabel: UILabel!
     
+    var topItem: TopItem! {
+        didSet {
+            titleLabel.text = topItem.title
+            authorLabel.text = topItem.author
+            timeLabel.text = topItem.created.stringFromDate()
+            commentsLabel.text = "Comments: \(topItem.numberOfComments)"
+            
+            }
+        
+    }
+    
+    var delegate: PostCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.delegate = nil
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    @IBAction func thumbnailTapped(_ sender: Any) {
+        self.delegate?.tappedThumbnail(sender: self)
+        
     }
     
 }

@@ -102,9 +102,83 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+}
+
+extension ViewController: PostCellDelegate {
+    func tappedThumbnail(sender: PostTableViewCell) {
+        guard let index = self.tableView.indexPath(for: sender) else {
+            print("couldn't find cell??")
+            return
+        }
+        print("tapped:\(index)")
+        print("need to open UIWebview with:")
+        print(sender.topItem.link)
+        
+        guard let fullImageURL = sender.topItem.imageSource else {
+            //alert view here?
+            print("item has no image")
+            return
+        }
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let photoVC = storyBoard.instantiateViewController(withIdentifier: "PhotoDetailsViewController") as! PhotoDetailsViewController
+        photoVC.imageStr = fullImageURL
+        self.present(photoVC, animated: true, completion: nil)
+        
+        
+    }
+}
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
-    func stringFromDate(date: Date) -> String {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //        return testTitles.count
+        return topItems.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
+        
+        let currentItem = topItems[indexPath.row]
+        cell.topItem = currentItem
+
+        cell.thumbnailImageView.image = UIImage(named: "placeholder")
+        
+        cell.thumbnailImageView.downloadImageFrom(link: currentItem.thumbnailURL!, contentMode: .scaleAspectFit)
+
+        cell.delegate = self
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        self.lastSeenID = topItems[indexPath.row].id
+    }
+    
+}
+
+// MARK: Helpers
+
+extension UIImageView {
+    func downloadImageFrom(link:String, contentMode: UIViewContentMode) {
+        URLSession.shared.dataTask( with: NSURL(string:link)! as URL, completionHandler: {
+            (data, response, error) -> Void in
+            DispatchQueue.main.async {
+                self.contentMode =  contentMode
+                if let data = data { self.image = UIImage(data: data) }
+            }
+        }).resume()
+    }
+}
+
+extension Date {
+    
+    func stringFromDate() -> String {
+        
+        let date = self
         
         let calendar = NSCalendar.current
         let unitFlags: Set<Calendar.Component> = [.minute, .hour, .day, .weekOfYear, .month, .year, .second]
@@ -146,53 +220,6 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //        return testTitles.count
-        return topItems.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
-        
-        let currentItem = topItems[indexPath.row]
-        
-        cell.titleLabel.text = currentItem.title
-        
-        cell.authorLabel.text = currentItem.author
-        
-        cell.timeLabel.text = stringFromDate(date: currentItem.created)
-        
-        cell.commentsLabel.text = "Comments: \(currentItem.numberOfComments)"
-        
-//        cell.thumbnailImageView.backgroundColor = .green
-        cell.thumbnailImageView.downloadImageFrom(link: currentItem.thumbnailURL!, contentMode: .scaleAspectFit)
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        self.lastSeenID = topItems[indexPath.row].id
-    }
-    
-}
-
-extension UIImageView {
-    func downloadImageFrom(link:String, contentMode: UIViewContentMode) {
-        URLSession.shared.dataTask( with: NSURL(string:link)! as URL, completionHandler: {
-            (data, response, error) -> Void in
-            DispatchQueue.main.async {
-                self.contentMode =  contentMode
-                if let data = data { self.image = UIImage(data: data) }
-            }
-        }).resume()
-    }
-}
 
 
 

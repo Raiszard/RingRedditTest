@@ -52,6 +52,9 @@
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qr3-Bw-ORU">
                         <rect key="frame" x="8" y="8" width="100" height="100"/>
+                        <connections>
+                            <action selector="thumbnailTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="4qi-F2-SnA"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

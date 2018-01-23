@@ -18,6 +18,8 @@ class TopItem: NSObject {
     var numberOfComments: Int!
     var link: String?
     
+    var imageSource: String?
+    
     func setupTopItem(json: JsonDict) {
         print(json)
         
@@ -32,6 +34,16 @@ class TopItem: NSObject {
             created = date
         } else {
             created = Date()
+        }
+        
+        imageSource = nil
+        if let preview = json["preview"] as? JsonDict {
+            if let images = preview["images"] as? [JsonDict] {
+                let source = images[0]
+                if let sourceObj = source["source"] as? JsonDict {
+                    imageSource = sourceObj["url"] as? String
+                }
+            }
         }
 
         thumbnailURL = json["thumbnail"] as? String

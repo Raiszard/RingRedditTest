@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Ring_Reddit_Test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="Ring_Reddit_Test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,6 +52,75 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Photo Details View Controller-->
+        <scene sceneID="xuH-om-31v">
+            <objects>
+                <viewController storyboardIdentifier="PhotoDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0qJ-uz-UYA" customClass="PhotoDetailsViewController" customModule="Ring_Reddit_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S9R-KF-fbU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsW-dI-JVd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="609"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LOF-9B-Sto">
+                                        <rect key="frame" x="87" y="254" width="200" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="CnS-9L-e29"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="LOF-9B-Sto" firstAttribute="centerX" secondItem="fsW-dI-JVd" secondAttribute="centerX" id="Acl-4B-HH7"/>
+                                    <constraint firstItem="LOF-9B-Sto" firstAttribute="leading" secondItem="fsW-dI-JVd" secondAttribute="leading" constant="87" id="IAl-4z-COl"/>
+                                    <constraint firstItem="LOF-9B-Sto" firstAttribute="centerY" secondItem="fsW-dI-JVd" secondAttribute="centerY" id="Tha-Vl-Qj7"/>
+                                    <constraint firstAttribute="bottom" secondItem="LOF-9B-Sto" secondAttribute="bottom" constant="255" id="VQQ-41-bPS"/>
+                                    <constraint firstAttribute="trailing" secondItem="LOF-9B-Sto" secondAttribute="trailing" constant="88" id="VZc-tN-rym"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="0qJ-uz-UYA" id="XAG-ZU-Dut"/>
+                                </connections>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VmN-Gr-Tql">
+                                <rect key="frame" x="148" y="617" width="79" height="30"/>
+                                <state key="normal" title="Save Image"/>
+                                <connections>
+                                    <action selector="saveTapped:" destination="0qJ-uz-UYA" eventType="touchUpInside" id="rwf-hP-QqB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agQ-oQ-c94">
+                                <rect key="frame" x="20" y="617" width="39" height="30"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="closeTapped:" destination="0qJ-uz-UYA" eventType="touchUpInside" id="QiS-Cq-4WA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VmN-Gr-Tql" firstAttribute="top" secondItem="fsW-dI-JVd" secondAttribute="bottom" constant="8" id="3gm-yh-c2e"/>
+                            <constraint firstItem="agQ-oQ-c94" firstAttribute="leading" secondItem="3RR-6V-UDH" secondAttribute="leading" constant="20" id="6g6-OP-UMd"/>
+                            <constraint firstItem="3RR-6V-UDH" firstAttribute="bottom" secondItem="VmN-Gr-Tql" secondAttribute="bottom" constant="20" id="8B1-H2-bxC"/>
+                            <constraint firstItem="fsW-dI-JVd" firstAttribute="top" secondItem="S9R-KF-fbU" secondAttribute="top" id="8Dr-mc-3Z2"/>
+                            <constraint firstItem="fsW-dI-JVd" firstAttribute="trailing" secondItem="3RR-6V-UDH" secondAttribute="trailing" id="Kz7-Xx-jpe"/>
+                            <constraint firstItem="agQ-oQ-c94" firstAttribute="top" secondItem="fsW-dI-JVd" secondAttribute="bottom" constant="8" id="MOi-d1-BLf"/>
+                            <constraint firstItem="VmN-Gr-Tql" firstAttribute="top" secondItem="fsW-dI-JVd" secondAttribute="bottom" constant="8" id="Odb-4M-YlJ"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="agQ-oQ-c94" secondAttribute="trailing" constant="20" symbolic="YES" id="ZBn-BG-voq"/>
+                            <constraint firstItem="3RR-6V-UDH" firstAttribute="bottom" secondItem="agQ-oQ-c94" secondAttribute="bottom" constant="20" id="alR-uw-tAp"/>
+                            <constraint firstItem="VmN-Gr-Tql" firstAttribute="centerX" secondItem="S9R-KF-fbU" secondAttribute="centerX" id="fDg-cL-TlA"/>
+                            <constraint firstItem="fsW-dI-JVd" firstAttribute="leading" secondItem="3RR-6V-UDH" secondAttribute="leading" id="hiL-Vs-IgQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3RR-6V-UDH"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="LOF-9B-Sto" id="XWV-nf-FfA"/>
+                        <outlet property="scrollView" destination="fsW-dI-JVd" id="scP-Ah-bRa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wdj-Cq-bLA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1354.4000000000001" y="32.833583208395808"/>
         </scene>
     </scenes>
 </document>
