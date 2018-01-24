@@ -15,12 +15,26 @@ class PhotoDetailsViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBAction func saveTapped(_ sender: Any) {
+        
+        UIImageWriteToSavedPhotosAlbum(imageView.image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
     
     @IBAction func closeTapped(_ sender: Any) {
         self.dismiss(animated: true)
     }
     
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            // we got back an error!
+            let ac = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        } else {
+            let ac = UIAlertController(title: "Saved!", message: "Image has been saved to your photos.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

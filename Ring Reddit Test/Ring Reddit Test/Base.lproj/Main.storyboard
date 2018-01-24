@@ -22,10 +22,18 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="postCell" id="JNn-MD-Ps5" customClass="PostTableViewCell" customModule="Ring_Reddit_Test" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="loadingCell" id="JNn-MD-Ps5" customClass="LoadingTableViewCell" customModule="Ring_Reddit_Test" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JNn-MD-Ps5" id="Ih5-W3-e0W">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="postCell" id="RvH-Cu-8MG" customClass="PostTableViewCell" customModule="Ring_Reddit_Test" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RvH-Cu-8MG" id="0rQ-n4-LU1">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
@@ -65,16 +73,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="609"/>
                                 <subviews>
                                     <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LOF-9B-Sto">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="609"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="581"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="609" id="CnS-9L-e29"/>
+                                            <constraint firstAttribute="height" constant="581" id="CnS-9L-e29"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="LOF-9B-Sto" firstAttribute="centerX" secondItem="fsW-dI-JVd" secondAttribute="centerX" id="Acl-4B-HH7"/>
                                     <constraint firstItem="LOF-9B-Sto" firstAttribute="leading" secondItem="fsW-dI-JVd" secondAttribute="leading" id="IAl-4z-COl"/>
-                                    <constraint firstItem="LOF-9B-Sto" firstAttribute="centerY" secondItem="fsW-dI-JVd" secondAttribute="centerY" id="Tha-Vl-Qj7"/>
+                                    <constraint firstItem="LOF-9B-Sto" firstAttribute="centerY" secondItem="fsW-dI-JVd" secondAttribute="centerY" constant="14" id="Tha-Vl-Qj7"/>
                                     <constraint firstAttribute="bottom" secondItem="LOF-9B-Sto" secondAttribute="bottom" id="VQQ-41-bPS"/>
                                     <constraint firstAttribute="trailing" secondItem="LOF-9B-Sto" secondAttribute="trailing" id="VZc-tN-rym"/>
                                 </constraints>

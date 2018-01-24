@@ -26,6 +26,8 @@ class ViewController: UIViewController {
         
         let cellnib = UINib(nibName: "PostTableViewCell", bundle: nil)
         tableView.register(cellnib, forCellReuseIdentifier: "postCell")
+        let loadcellnib = UINib(nibName: "LoadingTableViewCell", bundle: nil)
+        tableView.register(loadcellnib, forCellReuseIdentifier: "loadingCell")
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100
@@ -111,7 +113,6 @@ extension ViewController: PostCellDelegate {
             return
         }
         print("tapped:\(index)")
-        print("need to open UIWebview with:")
         print(sender.topItem.link)
         
         guard let fullImageURL = sender.topItem.imageSource else {
@@ -136,11 +137,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //        return testTitles.count
-        return topItems.count
+        return topItems.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row >= topItems.count {
+            let loadingCell = tableView.dequeueReusableCell(withIdentifier: "loadingCell", for: indexPath) as! LoadingTableViewCell
+            
+            loadingCell.loadingIndicator.startAnimating()
+            
+            return loadingCell
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
         
         let currentItem = topItems[indexPath.row]
@@ -157,7 +164,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        self.lastSeenID = topItems[indexPath.row].id
+        if indexPath.row >= topItems.count {
+            //TODO: make call with last seen ID
+        } else {
+            self.lastSeenID = topItems[indexPath.row].id
+        }
     }
     
 }
