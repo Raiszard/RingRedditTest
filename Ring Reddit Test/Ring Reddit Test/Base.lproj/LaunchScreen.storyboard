@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,13 +17,54 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ringLogo" translatesAutoresizingMaskIntoConstraints="NO" id="URR-fs-EGM">
+                                <rect key="frame" x="21" y="108" width="333" height="146"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="333" id="cqm-Bi-wjc"/>
+                                    <constraint firstAttribute="height" constant="146" id="su8-zd-tnx"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redditLogo" translatesAutoresizingMaskIntoConstraints="NO" id="zOd-Tt-7v5">
+                                <rect key="frame" x="8" y="262" width="359" height="142"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coding Test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvG-uK-Oyl">
+                                <rect key="frame" x="55" y="459" width="265" height="91"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="91" id="PB1-GZ-4NO"/>
+                                    <constraint firstAttribute="width" constant="265" id="QhO-lc-G72"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zOd-Tt-7v5" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="37v-hq-NEq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="URR-fs-EGM" secondAttribute="trailing" constant="21" id="C0Q-kC-ofu"/>
+                            <constraint firstItem="URR-fs-EGM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="Fqy-Jm-TPE"/>
+                            <constraint firstItem="hvG-uK-Oyl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="55" id="HLL-XW-EgD"/>
+                            <constraint firstItem="URR-fs-EGM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="21" id="MQf-RS-3Ap"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hvG-uK-Oyl" secondAttribute="trailing" constant="55" id="Rhg-bA-f3b"/>
+                            <constraint firstAttribute="trailing" secondItem="zOd-Tt-7v5" secondAttribute="trailing" constant="8" id="dNF-Rz-pA4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="URR-fs-EGM" secondAttribute="trailing" constant="21" id="g03-4Q-tMi"/>
+                            <constraint firstItem="hvG-uK-Oyl" firstAttribute="top" secondItem="zOd-Tt-7v5" secondAttribute="bottom" constant="55" id="ihK-mA-vdW"/>
+                            <constraint firstItem="zOd-Tt-7v5" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="r2J-Fr-qCo"/>
+                            <constraint firstItem="zOd-Tt-7v5" firstAttribute="top" secondItem="URR-fs-EGM" secondAttribute="bottom" constant="8" id="swb-M9-jfP"/>
+                            <constraint firstItem="zOd-Tt-7v5" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="8" id="tFA-Ui-sbq"/>
+                            <constraint firstItem="zOd-Tt-7v5" firstAttribute="top" secondItem="URR-fs-EGM" secondAttribute="bottom" constant="8" id="ymk-ZR-gvF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="redditLogo" width="426" height="142"/>
+        <image name="ringLogo" width="1389" height="889"/>
+    </resources>
 </document>

@@ -90,9 +90,13 @@
                                     <outlet property="delegate" destination="0qJ-uz-UYA" id="XAG-ZU-Dut"/>
                                 </connections>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VmN-Gr-Tql">
-                                <rect key="frame" x="148" y="617" width="79" height="30"/>
-                                <state key="normal" title="Save Image">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VmN-Gr-Tql" userLabel="Save Image">
+                                <rect key="frame" x="137.5" y="617" width="100" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.38261291058394159" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Uk7-Eb-pD4"/>
+                                </constraints>
+                                <state key="normal" title=" Save Image ">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -127,6 +131,7 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="LOF-9B-Sto" id="XWV-nf-FfA"/>
+                        <outlet property="saveButton" destination="VmN-Gr-Tql" id="V4i-59-3fZ"/>
                         <outlet property="scrollView" destination="fsW-dI-JVd" id="scP-Ah-bRa"/>
                     </connections>
                 </viewController>

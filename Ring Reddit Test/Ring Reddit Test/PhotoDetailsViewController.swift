@@ -13,6 +13,7 @@ class PhotoDetailsViewController: UIViewController {
     var imageURL: URL!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     @IBAction func saveTapped(_ sender: Any) {
         
@@ -44,6 +45,8 @@ class PhotoDetailsViewController: UIViewController {
 
         imageView.image = UIImage(named: "placeholder")
         imageView.downloadImageFrom(link: imageURL, contentMode: .scaleAspectFit)
+        
+        saveButton.layer.cornerRadius = saveButton.frame.width/10
     }
 
     override func didReceiveMemoryWarning() {

@@ -12,7 +12,8 @@ typealias JsonDict = Dictionary<String, AnyObject>
 
 class ViewController: UIViewController {
     
-    var limit = INT64_MAX
+    let limit = 50//INT64_MAX
+    
     @IBOutlet weak var tableView: UITableView!
     
     var testTitles: [String] = []
@@ -22,6 +23,16 @@ class ViewController: UIViewController {
     var lastSeenID: String = ""
     
     var api: API!
+    
+    @objc func refreshTopItems() {
+        topItems = []
+        api.lastItem = nil
+        lastSeenID = ""
+        DispatchQueue.main.async {
+            self.tableView.refreshControl?.endRefreshing()
+            self.tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +46,15 @@ class ViewController: UIViewController {
         //dynamically size cells
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100
+        tableView.tableFooterView = UIView()
         
+        //pull to refresh
+        let refreshControl = UIRefreshControl()
+        let selec = #selector(ViewController.refreshTopItems)
+        refreshControl.addTarget(self, action: selec, for: .valueChanged)
+        tableView.refreshControl = refreshControl
+
+
         //test data to make sure dynamic cell heights is working
         /*
         for _ in 0...10 {
@@ -70,7 +89,11 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+
 }
+
+// MARK: Delegates
 
 extension ViewController: PostCellDelegate {
     func tappedThumbnail(sender: PostTableViewCell) {
