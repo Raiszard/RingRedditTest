@@ -16,8 +16,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var testTitles: [String] = []
-    
     var topItems: [TopItem] = []
     
     var lastSeenID: String = ""
@@ -75,22 +73,50 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    var callInProgess = false
     
     func getMoreItems() {
-        api.retrieveItems(lastSeenItem: self.lastSeenID) { (array) in
-            guard let newItems = array else {
-                return
-            }
-            self.topItems.append(contentsOf: newItems)
-            
-            //call on main thread since UI is being changed
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
+        if !callInProgess {
+            callInProgess = true
+            api.retrieveItems(lastSeenItem: self.lastSeenID) { (array) in
+                self.callInProgess = false
+                guard let newItems = array else {
+                    return
+                }
+                self.topItems.append(contentsOf: newItems)
+                
+                //call on main thread since UI is being changed
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             }
         }
     }
     
+    override func encodeRestorableState(with coder: NSCoder) {
+        coder.encode(lastSeenID, forKey: "lastSeenID")
+        super.encodeRestorableState(with: coder)
+    }
+    
+    override func decodeRestorableState(with coder: NSCoder) {
+        lastSeenID = coder.decodeObject(forKey: "lastSeenID") as! String
+        super.decodeRestorableState(with: coder)
+    }
+    
+    override func applicationFinishedRestoringState() {
 
+        if lastSeenID != "" {
+            print("oh shit waddup!")
+//            api = API()
+            api.lastItem = nil
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        
+        
+    }
+    
 }
 
 // MARK: Delegates
@@ -106,8 +132,8 @@ extension ViewController: PostCellDelegate {
         let photoVC = storyBoard.instantiateViewController(withIdentifier: "PhotoDetailsViewController") as! PhotoDetailsViewController
         photoVC.imageURL = fullImageURL
         self.present(photoVC, animated: true, completion: nil)
-        
     }
+    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -173,6 +199,7 @@ extension UIImageView {
             }
         }).resume()
     }
+    
 }
 
 extension Date {
@@ -217,16 +244,7 @@ extension Date {
         } else {
             return "Just now"
         }
-        
     }
+    
 }
-
-
-
-
-
-
-
-
-
 

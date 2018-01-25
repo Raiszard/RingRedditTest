@@ -44,7 +44,9 @@ class PhotoDetailsViewController: UIViewController {
         scrollView.zoomScale = 1.0
 
         imageView.image = UIImage(named: "placeholder")
-        imageView.downloadImageFrom(link: imageURL, contentMode: .scaleAspectFit)
+        if imageURL != nil {
+            imageView.downloadImageFrom(link: imageURL, contentMode: .scaleAspectFit)
+        }
         
         saveButton.layer.cornerRadius = saveButton.frame.width/10
     }
@@ -52,6 +54,21 @@ class PhotoDetailsViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func encodeRestorableState(with coder: NSCoder) {
+        coder.encode(imageURL, forKey: "imageURL")
+        super.encodeRestorableState(with: coder)
+    }
+    
+    override func decodeRestorableState(with coder: NSCoder) {
+        imageURL = coder.decodeObject(forKey: "imageURL") as! URL
+        super.decodeRestorableState(with: coder)
+    }
+    
+    override func applicationFinishedRestoringState() {
+        guard let image = imageURL else { return }
+        imageView.downloadImageFrom(link: image, contentMode: .scaleAspectFit)
     }
 
 }
