@@ -14,3 +14,7 @@ Features:
 
 To Run:
 - Open the .xcodeproj file in Xcode and run
+
+# Screenshots:
+![alt Image1](https://github.com/Raiszard/RingRedditTest/blob/master/Ring%20Reddit%20Test/mainView.png)
+![alt Image2](https://github.com/Raiszard/RingRedditTest/blob/master/Ring%20Reddit%20Test/photoDetails.png)
