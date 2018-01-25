@@ -92,14 +92,18 @@
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VmN-Gr-Tql">
                                 <rect key="frame" x="148" y="617" width="79" height="30"/>
-                                <state key="normal" title="Save Image"/>
+                                <state key="normal" title="Save Image">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="saveTapped:" destination="0qJ-uz-UYA" eventType="touchUpInside" id="rwf-hP-QqB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agQ-oQ-c94">
                                 <rect key="frame" x="20" y="617" width="39" height="30"/>
-                                <state key="normal" title="Close"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.023573720190000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="closeTapped:" destination="0qJ-uz-UYA" eventType="touchUpInside" id="QiS-Cq-4WA"/>
                                 </connections>

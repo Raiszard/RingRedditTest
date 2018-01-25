@@ -39,7 +39,7 @@ class PhotoDetailsViewController: UIViewController {
         super.viewDidLoad()
 
         scrollView.minimumZoomScale = 1.0
-        scrollView.maximumZoomScale = 10.0//maximum zoom scale you want
+        scrollView.maximumZoomScale = 10.0
         scrollView.zoomScale = 1.0
 
         imageView.image = UIImage(named: "placeholder")
@@ -50,17 +50,6 @@ class PhotoDetailsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

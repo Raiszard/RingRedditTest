@@ -12,6 +12,7 @@ typealias JsonDict = Dictionary<String, AnyObject>
 
 class ViewController: UIViewController {
     
+    var limit = INT64_MAX
     @IBOutlet weak var tableView: UITableView!
     
     var testTitles: [String] = []
@@ -20,20 +21,23 @@ class ViewController: UIViewController {
     
     var lastSeenID: String = ""
     
+    var api: API!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
+
+        //register the custom cells
         let cellnib = UINib(nibName: "PostTableViewCell", bundle: nil)
         tableView.register(cellnib, forCellReuseIdentifier: "postCell")
         let loadcellnib = UINib(nibName: "LoadingTableViewCell", bundle: nil)
         tableView.register(loadcellnib, forCellReuseIdentifier: "loadingCell")
         
+        //dynamically size cells
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100
         
         //test data to make sure dynamic cell heights is working
-        
+        /*
         for _ in 0...10 {
             let rand = Int(arc4random_uniform(20))
             var randomlyLongText = ""
@@ -42,61 +46,9 @@ class ViewController: UIViewController {
             }
             testTitles.append(randomlyLongText)
         }
+        */
         
-        //test call for API
-        let api = API()
-        
-        api.retrieveData(url: "https://api.reddit.com/top") { (jsonResponse, error) in
-            if error == nil {
-                //parse json
-                print(jsonResponse!)
-                guard let dict = jsonResponse as? JsonDict else {
-                    print("couldn't create dictionary")
-                    return
-                }
-                let type = dict["kind"] as? String
-                
-                if type == "Listing" {
-                    guard let data = dict["data"] as? JsonDict else {
-                        print("no data in resonse")
-                        return
-                    }
-                    if let after = data["after"] as? String {
-                        api.lastItem = after
-                    }
-                    
-                    
-                    guard let items = data["children"] as? [JsonDict] else {
-                        print("no items in response")
-                        return
-                    }
-                    
-                    print("got \(items.count) items")
-                    for item in items {
-                        guard item["kind"] as? String == "t3" else {
-                            print("wrong type of item")
-                            continue
-                        }
-                        guard let itemDict = item["data"] as? JsonDict else {
-                            print("item had no data")
-                            continue
-                        }
-                        let newItem = TopItem()
-                        newItem.setupTopItem(json: itemDict)
-                        
-                        self.topItems.append(newItem)
-                    }
-                    
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                } else {
-                    print("invalid response type")
-                }
-            } else {
-                print(error!.localizedDescription)
-            }
-        }
+        api = API()
         
     }
     
@@ -104,19 +56,25 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func getMoreItems() {
+        api.retrieveItems(lastSeenItem: self.lastSeenID) { (array) in
+            guard let newItems = array else {
+                return
+            }
+            self.topItems.append(contentsOf: newItems)
+            
+            //call on main thread since UI is being changed
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
 }
 
 extension ViewController: PostCellDelegate {
     func tappedThumbnail(sender: PostTableViewCell) {
-        guard let index = self.tableView.indexPath(for: sender) else {
-            print("couldn't find cell??")
-            return
-        }
-        print("tapped:\(index)")
-        print(sender.topItem.link)
-        
         guard let fullImageURL = sender.topItem.imageSource else {
-            //alert view here?
             print("item has no image")
             return
         }
@@ -125,7 +83,6 @@ extension ViewController: PostCellDelegate {
         let photoVC = storyBoard.instantiateViewController(withIdentifier: "PhotoDetailsViewController") as! PhotoDetailsViewController
         photoVC.imageURL = fullImageURL
         self.present(photoVC, animated: true, completion: nil)
-        
         
     }
 }
@@ -137,15 +94,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if topItems.count >= limit { return Int(limit) }
+        
+        //if limit isnt reached show loading cell to get more items
         return topItems.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row >= topItems.count {
             let loadingCell = tableView.dequeueReusableCell(withIdentifier: "loadingCell", for: indexPath) as! LoadingTableViewCell
-            
             loadingCell.loadingIndicator.startAnimating()
-            
             return loadingCell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
@@ -156,6 +114,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.thumbnailImageView.image = UIImage(named: "placeholder")
         
         if currentItem.thumbnailURL != nil {
+            //TODO: make this smarter by adding a priority queue and to have low priority for loading images if the cell has been scrolled away
             cell.thumbnailImageView.downloadImageFrom(link: currentItem.thumbnailURL!, contentMode: .scaleAspectFit)
         }
 
@@ -165,8 +124,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row >= topItems.count {
-            //TODO: make call with last seen ID
+            //loading cell showing so lets get more items
+            self.getMoreItems()
         } else {
+            //using this for state restoration to get where the user left off
             self.lastSeenID = topItems[indexPath.row].id
         }
     }

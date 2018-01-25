@@ -10,15 +10,14 @@ import Foundation
 
 class API: NSObject {
     
-    var lastItem = ""
-    let limit = 50
+    var lastItem:String? = ""
     let itemsPerPage = 20
     
     func createRequest(baseURL: String) -> URLRequest? {
         
         var endpoint: String
-        if lastItem.isEmpty {
-            endpoint = baseURL + "?after=\(lastItem)&limit=\(itemsPerPage)"
+        if lastItem != nil && !lastItem!.isEmpty {
+            endpoint = baseURL + "?after=\(lastItem!)&limit=\(itemsPerPage)"
         } else {
             endpoint = baseURL + "?limit=\(itemsPerPage)"
         }
@@ -40,7 +39,7 @@ class API: NSObject {
             return
         }
         
-        print("*** Request:\(request.url?.absoluteString)")
+        print("*** Request:\(String(describing: request.url?.absoluteString))")
         
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
@@ -48,7 +47,7 @@ class API: NSObject {
                 print(error!)
                 callback(nil, error)
             } else {
-                let httpResponse = response as? HTTPURLResponse
+//                let httpResponse = response as? HTTPURLResponse
 //                print(httpResponse!)
                 
                 guard let responseData = data else {
@@ -71,5 +70,70 @@ class API: NSObject {
         })
         
         dataTask.resume()
+    }
+    //    func retrieveData(url: String, callback: @escaping ((AnyObject?, Error?) -> ())) {
+
+    func retrieveItems(lastSeenItem: String?, callback: @escaping (([TopItem]?) -> ())) {
+        if self.lastItem == nil && lastSeenItem != nil {
+            self.lastItem = "t3_" + lastSeenItem!
+        }
+        retrieveData(url: "https://api.reddit.com/top") { (jsonResponse, error) in
+            if error == nil {
+                //parse json
+                print(jsonResponse!)
+                guard let dict = jsonResponse as? JsonDict else {
+                    print("couldn't create dictionary")
+                    callback(nil)
+                    return
+                }
+                let type = dict["kind"] as? String
+                
+                if type == "Listing" {
+                    guard let data = dict["data"] as? JsonDict else {
+                        print("no data in resonse")
+                        callback(nil)
+                        return
+                    }
+                    if let after = data["after"] as? String {
+                        self.lastItem = after
+                    }
+                    
+                    
+                    guard let items = data["children"] as? [JsonDict] else {
+                        print("no items in response")
+                        callback(nil)
+                        return
+                    }
+                    
+                    print("got \(items.count) items")
+                    var topItems: [TopItem] = []
+                    for item in items {
+                        guard item["kind"] as? String == "t3" else {
+                            print("wrong type of item")
+                            continue
+                        }
+                        guard let itemDict = item["data"] as? JsonDict else {
+                            print("item had no data")
+                            continue
+                        }
+                        let newItem = TopItem()
+                        newItem.setupTopItem(json: itemDict)
+                        
+                        topItems.append(newItem)
+                    }
+                    callback(topItems)
+//                    DispatchQueue.main.async {
+//                        self.tableView.reloadData()
+//                    }
+                } else {
+                    print("invalid response type")
+                    callback(nil)
+                    return
+                }
+            } else {
+                print(error!.localizedDescription)
+                callback(nil)
+            }
+        }
     }
 }
