@@ -18,7 +18,8 @@ class ViewController: UIViewController {
     
     var topItems: [TopItem] = []
     
-    var lastSeenID: String = ""
+    var lastSeenID = ""
+    var secondToLastID = ""
     
     var api: API!
     
@@ -26,6 +27,7 @@ class ViewController: UIViewController {
         topItems = []
         api.lastItem = nil
         lastSeenID = ""
+        secondToLastID = ""
         DispatchQueue.main.async {
             self.tableView.refreshControl?.endRefreshing()
             self.tableView.reloadData()
@@ -78,7 +80,7 @@ class ViewController: UIViewController {
     func getMoreItems() {
         if !callInProgess {
             callInProgess = true
-            api.retrieveItems(lastSeenItem: self.lastSeenID) { (array) in
+            api.retrieveItems(lastSeenItem: self.secondToLastID) { (array) in
                 self.callInProgess = false
                 guard let newItems = array else {
                     return
@@ -94,26 +96,23 @@ class ViewController: UIViewController {
     }
     
     override func encodeRestorableState(with coder: NSCoder) {
-        coder.encode(lastSeenID, forKey: "lastSeenID")
+        coder.encode(secondToLastID, forKey: "secondToLastID")
         super.encodeRestorableState(with: coder)
     }
     
     override func decodeRestorableState(with coder: NSCoder) {
-        lastSeenID = coder.decodeObject(forKey: "lastSeenID") as! String
+        secondToLastID = coder.decodeObject(forKey: "secondToLastID") as! String
         super.decodeRestorableState(with: coder)
     }
     
     override func applicationFinishedRestoringState() {
 
-        if lastSeenID != "" {
-            print("oh shit waddup!")
-//            api = API()
+        if secondToLastID != "" {
             api.lastItem = nil
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
-        
         
     }
     
@@ -177,6 +176,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             self.getMoreItems()
         } else {
             //using this for state restoration to get where the user left off
+            self.secondToLastID = lastSeenID
             self.lastSeenID = topItems[indexPath.row].id
         }
     }
